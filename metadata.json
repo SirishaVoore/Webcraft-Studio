@@ -1,0 +1,8 @@
+{
+  "name": "WebCraft Studio",
+  "description": "Premium design and engineering agency website featuring the interactive Build Methodology architecture, curated portfolio showcase, live project estimator, and responsive experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

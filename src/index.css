@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-display: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    --color-cta: #39d6ce;
+    --color-purple: #6e10f7;
+    --color-blue: #0ea5e9;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #040507;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+.font-editorial,
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-sans-main {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Subtle dark grid background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* Custom glow effects */
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 15px 0px rgba(6, 182, 212, 0.4);
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
+}
+
+/* Glassmorphic cards */
+.glass-panel {
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 24, 33, 0.85);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #040507;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
