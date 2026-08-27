@@ -80,11 +80,11 @@ export const Hero: React.FC<HeroProps> = ({
           id="hero-actions-container"
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
-          {/* Secondary Outlined Button */}
+          {/* Get in touch Button matching turquoise style */}
           <button
             id="hero-btn-get-in-touch"
             onClick={onGetInTouch}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-black/60 text-white font-sans text-sm font-semibold border border-white/[0.2] hover:border-white/[0.4] hover:bg-white/[0.05] transition-all duration-200 shadow-lg cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#39d6ce] text-black font-sans text-sm font-semibold hover:bg-[#2cc2ba] transition-all duration-200 shadow-lg shadow-[#39d6ce]/25 flex items-center justify-center cursor-pointer"
           >
             Get in touch
           </button>
