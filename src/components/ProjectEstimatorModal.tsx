@@ -55,9 +55,29 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({ is
 
   const estimatedTotal = Math.round((selectedTypeObj.basePrice + addonsTotal) * selectedVelocityObj.multiplier);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    try {
+      const res = await fetch('http://localhost:3001/api/build', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          projectType: selectedTypeObj.name,
+          velocityTier: selectedVelocityObj.name,
+          selectedAddons: selectedAddons.map(
+            (id) => availableAddons.find((a) => a.id === id)?.name ?? id
+          ),
+          estimatedTotal,
+          clientName,
+          clientEmail,
+          projectNotes,
+        }),
+      });
+      if (!res.ok) throw new Error('Server error');
+      setSubmitted(true);
+    } catch {
+      alert('Failed to send build spec. Please try again.');
+    }
   };
 
   return (

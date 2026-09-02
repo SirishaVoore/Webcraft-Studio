@@ -32,12 +32,28 @@ export const InquirySection: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    setTimeout(() => {
+    try {
+      const res = await fetch('http://localhost:3001/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          services,
+          budget,
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+        }),
+      });
+      if (!res.ok) throw new Error('Server error');
       setStatus('success');
-    }, 600);
+    } catch {
+      alert('Failed to send inquiry. Please try again.');
+      setStatus('idle');
+    }
   };
 
   return (
